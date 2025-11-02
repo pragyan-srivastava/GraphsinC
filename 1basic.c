@@ -2,25 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-typedef struct graphM
-{
-    int **mat;
-    int vertices;
-} graphM;
-
-typedef struct Node
-{
-    int name;
-    int weight;
-    struct Node *next;
-} Node;
-
-typedef struct graphL
-{
-    int vertices;
-    struct Node **adj;
-
-} graphL;
+#include "1basic.h"
 
 struct graphM *createMatrixGraph(int v)
 {
@@ -191,10 +173,8 @@ void printListGraph(graphL *graph)
         }
     }
 }
-
-int main()
+graphM *constructMatrixDemo1()
 {
-
     struct graphM *graph1 = createMatrixGraph(6);
     addUndirectedEdgesM(graph1, 1, 2, 5);
     addUndirectedEdgesM(graph1, 1, 3, 10);
@@ -208,9 +188,11 @@ int main()
     addDirectedEdgesM(graph1, 2, 5, 2);
 
     removeEdgeM(graph1, 2, 5);
+    return graph1;
+}
 
-    printMatrixGraph(graph1);
-
+graphL *constructListDemo1()
+{
     graphL *graph2 = createListGraph(6);
     addUndirectedEdgesL(graph2, 1, 2, 5);
     addUndirectedEdgesL(graph2, 1, 3, 10);
@@ -224,8 +206,5 @@ int main()
     addDirectedEdgesL(graph2, 2, 5, 2);
 
     removeEdgeL(graph2, 2, 5);
-
-    printListGraph(graph2);
-
-    return 0;
+    return graph2;
 }
