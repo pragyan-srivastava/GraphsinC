@@ -1,9 +1,7 @@
 // #include "queue.h"
 #include "queue.c"
 #include <stdio.h>
-// =============================
-// Demo
-// =============================
+
 int main()
 {
     Queue *q = createEmptyQ();
