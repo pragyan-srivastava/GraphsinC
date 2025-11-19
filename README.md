@@ -18,3 +18,4 @@ This project is a from-scratch implementation of graph data structures and algor
 
 ### 4. Supporting Data Structures
 - A custom **Queue** implementation used for the BFS algorithm.
+- **Disjoint Set Union (DSU):** Implemented with Path Compression and Union by Size optimizations, crucial for algorithms like Kruskal's.
